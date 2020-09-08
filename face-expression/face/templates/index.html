@@ -1,0 +1,198 @@
+<!-- {% load static %}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Check Expression</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'css/home.css' %}">
+            <script src="{% static 'js/jquery.slim.min.js' %}"></script>
+            <script src="{% static 'js/popper.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+</head> 
+<body> 
+<h1>Hello</h1>
+{% if ans %}
+<div >{{ans}}</div>
+{% endif %}
+
+
+
+<form action="{% url 'index' %}"   method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+      <div class="row">
+          <div class="col">
+              <label ><h4>Photograph</h4></label>
+              <input type="file" style="width: 450px" name="document" id="document" placeholder="Upload file" required/>
+          </div>
+      </div>
+   
+        <button type="submit" class="btn-btn-success">Submit</button>    
+</form>
+</body> 
+</html> 
+ -->
+
+
+
+ 
+ <!DOCTYPE html>
+ <html>
+ <title>Face Expression</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+ <style>
+ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+ </style>
+ <body class="w3-light-grey">
+ 
+ <!-- w3-content defines a container for fixed size centered content, 
+ and is wrapped around the whole page content, except for the footer in this example -->
+ <div class="w3-content" style="max-width:1400px">
+ 
+ <!-- Header -->
+ <header class="w3-container w3-center w3-padding-32"> 
+   <h1><b>Face Expression</b></h1>
+   <p>Deep Learning Based Prediction.<span class="w3-tag"></span></p>
+ </header>
+ 
+ <!-- Grid -->
+ <div class="w3-row">
+ 
+ <!-- Blog entries -->
+ <div class="w3-col l8 s12">
+   <!-- Blog entry -->
+   <div class="w3-card-4 w3-margin w3-white">
+     
+     <div class="w3-container">
+       <h3><b>Image Based Model Training</b></h3>
+       <h5>Idea description, <span class="w3-opacity">April 7, 2020</span></h5>
+     </div>
+ 
+     <div class="w3-container">
+       <p>One of the biggest myths about AI is that you need to have a large amount of data to obtain sufficient accuracy — and the rapid development of Big Data analytics seems to prove this intuition. It is true, that deep learning methods require model training on a huge number of labeled images. However, in image classification even a small collection of training images may produce a reasonable accuracy rate (90–100%) if using new machine learning techniques, that either make use of previously collected data to adjacent domains or modify the classification process completely, working on similarity of images.</p>
+       <div class="w3-row">
+         <div class="w3-col m8 s12">
+           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>Get Code »</b></button></p>
+         </div>
+         <div class="w3-col m4 w3-hide-small">
+           <p><span class="w3-padding-large w3-right"> </p>
+         </div>
+       </div>
+     </div>
+   </div>
+   <hr>
+ 
+   <!-- Blog entry -->
+   <div class="w3-card-4 w3-margin w3-white">
+   
+     <div class="w3-container">
+       <h3><b>Demo</b></h3>
+       <h5>Check for your own images.<span class="w3-opacity"></span></h5>
+     </div>
+    
+<div ></div>
+
+
+     <div class="w3-container">
+       <div class="w3-row">
+        <form action="{% url 'index' %}"   method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+              <div class="row">
+                  <div class="col">
+                      <label ><h4>Photograph</h4></label>
+                      <input type="file" style="width: 450px" name="document" id="document" placeholder="Upload file" required/>
+                  </div>
+              </div>
+              <p><button  type="submit" class="w3-button w3-padding-large w3-white w3-border"><b>Submit »</b></button></p>
+                  
+        </form>
+        <li class="w3-padding-16">
+            {% if ans %}
+            <span class="w3-large" >Your Expression : {{ans}}</span><br>
+            {% endif %}
+        </li>
+         
+       </div>
+     </div>
+   </div>
+ <!-- END BLOG ENTRIES -->
+ </div>
+ 
+ <!-- Introduction menu -->
+ <div class="w3-col l4">
+   <!-- About Card -->
+   <div class="w3-card w3-margin w3-margin-top">
+   
+     <div class="w3-container w3-white">
+       <h4><b>Shantanu Mane.</b></h4>
+       <p>Student of Government College of Engineering, Karad.</p>
+     </div>
+   </div><hr>
+   
+   <!-- Posts -->
+   <div class="w3-card w3-margin">
+     <div class="w3-container w3-padding">
+       <h4>Technology Behind The Model</h4>
+     </div>
+     <ul class="w3-ul w3-hoverable w3-white">
+       <li class="w3-padding-16">
+         
+         <span class="w3-large">Deep Learning</span><br>
+         <span></span>
+       </li>
+       <li class="w3-padding-16">
+        
+         <span class="w3-large">Convolutional neural network</span><br>
+        
+       </li> 
+       <li class="w3-padding-16">
+        
+         <span class="w3-large">CNN architecture</span><br>
+     
+       </li>   
+       <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+       
+         <span class="w3-large">Dataset from kaggle</span><br>
+    
+       </li>  
+     </ul>
+   </div>
+   <hr> 
+  
+   <!-- Labels / tags -->
+   <div class="w3-card w3-margin">
+     <div class="w3-container w3-padding">
+       <h4>Tags</h4>
+     </div>
+     <div class="w3-container w3-white">
+     <p><span class="w3-tag w3-black w3-margin-bottom">AI</span> 
+       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">ML</span>  <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Deep Learning</span><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">VGG16</span>
+       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">ANN</span> 
+       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">CNN</span> 
+       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">GPU-Training</span> 
+     </p>
+     </div>
+   </div>
+   
+ <!-- END Introduction Menu -->
+ </div>
+ 
+ <!-- END GRID -->
+ </div><br>
+ 
+ <!-- END w3-content -->
+ </div>
+ 
+ <!-- Footer -->
+ <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+   <button class="w3-button w3-black  w3-padding-large w3-margin-bottom"><a href="https://www.linkedin.com/in/shantanu-mane-651549183" target="_blank">Contact Info >></a></button>
+   <button class="w3-button w3-black w3-padding-large w3-margin-bottom"><a href="https://www.facebook.com/shantanu.mane.355" target="_blank">Get connected to Facebook »</a></a></button>
+   <p>Powered by Deep Learning. Deployed with Django. 2020 .</p>
+ </footer>
+ 
+ </body>
+ </html>
+ 
